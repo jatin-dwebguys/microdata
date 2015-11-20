@@ -8,6 +8,14 @@
 */
 -->
 <config>
+    <default>
+       <microdatasection>
+            <micro>
+                <ismandatory>1</ismandatory>
+                <containgerselector>.product-view</containgerselector>
+            </micro>
+        </microdatasection>
+    </default>
     <modules>
         <Extendware_Microdata>
             <version>0.1.0</version>
@@ -23,7 +31,13 @@
                 </args>
             </microdata>
         </routers>
-        
+        <layout>
+            <updates>
+                <microdata>
+                    <file>microdata.xml</file>
+                </microdata>
+            </updates>
+        </layout>
         <events>
             <core_block_abstract_to_html_after>
 			<observers>
@@ -36,8 +50,62 @@
 		</core_block_abstract_to_html_after>
          </events>
     </frontend>
-   
-    
+    <admin>
+        <routers>
+            <microdata>
+                <use>admin</use>
+                <args>
+                    <module>Extendware_Microdata</module>
+                    <frontName>microdata</frontName>
+                </args>
+            </microdata>
+        </routers>
+    </admin>
+    <adminhtml>
+        <menu>
+            <microdata module="microdata">
+                <title>Microdata</title>
+                <sort_order>71</sort_order>               
+                <children>
+                    <items module="microdata">
+                        <title>Manage Items</title>
+                        <sort_order>0</sort_order>
+                        <action>microdata/adminhtml_microdata</action>
+                    </items>
+                </children>
+            </microdata>
+        </menu>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <microdatasection translate="title" module="microdata">  <!-- This is name of the section created by us -->
+                                            <title>Micro Section</title>  <!-- Title as shown in User->Roles->Permissions Window -->
+                                            <sort_order>99</sort_order>
+                                        </microdatasection>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <layout>
+            <updates>
+                <microdata>
+                    <file>microdata.xml</file>
+                </microdata>
+            </updates>
+        </layout>
+    </adminhtml>   
     <global>
         <models>
             <microdata>
@@ -53,7 +121,26 @@
                 </entities>
             </microdata_mysql4>
         </models>
-        
+        <resources>
+            <microdata_setup>
+                <setup>
+                    <module>Extendware_Microdata</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </microdata_setup>
+            <microdata_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </microdata_write>
+            <microdata_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </microdata_read>
+        </resources>
         <blocks>
             <microdata>
                 <class>Extendware_Microdata_Block</class>
@@ -63,7 +150,12 @@
             <microdata>
                 <class>Extendware_Microdata_Helper</class>
             </microdata>
-           
+            <!--over ride helper (Mage_Catalog_Helper_Output)-->
+<!--            <catalog>
+                <rewrite>
+                    <output>Extendware_Microdata_Helper_Data</output>
+                </rewrite>
+            </catalog>-->
 		
         </helpers>
     </global>
