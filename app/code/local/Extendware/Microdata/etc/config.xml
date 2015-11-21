@@ -13,6 +13,12 @@
             <micro>
                 <ismandatory>1</ismandatory>
                 <containgerselector>.product-view</containgerselector>
+                <pricecontainer>.price-box</pricecontainer>
+                <namecontainer>.product-shop .product-name</namecontainer>
+                <descriptionselector>.short-description .std</descriptionselector>
+                <reviewrating>.ratings .rating-box</reviewrating>
+                <offerprice>.price-box .special-price</offerprice>
+                <offerpricebox>.price-box .special-price .price</offerpricebox>
             </micro>
         </microdatasection>
     </default>

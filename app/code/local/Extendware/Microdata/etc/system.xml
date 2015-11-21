@@ -37,18 +37,86 @@
                         
                         <containgerselector translate="label">
                             <label>Container Selector</label>
-                            <frontend_type>text</frontend_type>   <!-- This time field type is text field -->
+                            <frontend_type>text</frontend_type>   
                             <comment></comment>
                             <sort_order>260</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </containgerselector>
+                        <pricecontainer translate="label">
+                            <label>Price Container</label>
+                            <frontend_type>text</frontend_type>   
+                            <comment></comment>
+                            <sort_order>280</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </pricecontainer>
+                        <namecontainer translate="label">
+                            <label>Name Container</label>
+                            <frontend_type>text</frontend_type>   
+                            <comment></comment>
+                            <sort_order>300</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </namecontainer>
+                        
+                        <descriptionselector translate="label">
+                            <label>Description Selector</label>
+                            <frontend_type>text</frontend_type>   
+                            <comment></comment>
+                            <sort_order>320</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </descriptionselector>
+                        
+                        <priceincludingtax translate="label">
+                            <label>Price Including Tax</label>
+                            <frontend_type>select</frontend_type>
+                            <comment></comment>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>340</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>	
+                            <show_in_store>1</show_in_store>
+                        </priceincludingtax>
+                        <reviewrating translate="label">
+                            <label>Review Rating</label>
+                            <frontend_type>text</frontend_type>   
+                            <comment></comment>
+                            <sort_order>360</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </reviewrating>
+                        <offerprice translate="label">
+                            <label>OFFer Price</label>
+                            <frontend_type>text</frontend_type>   
+                            <comment></comment>
+                            <sort_order>380</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </offerprice>
+                        <offerpricebox translate="label">
+                            <label>OFFer Price</label>
+                            <frontend_type>text</frontend_type>   
+                            <comment></comment>
+                            <sort_order>400</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </offerpricebox>
                         
                     </fields>
                  
                 </micro>
+                
             </groups>
         </microdatasection>
     </sections>
 </config>
+
